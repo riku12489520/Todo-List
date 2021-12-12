@@ -1,0 +1,203 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap);
+.btn-del, .btn-add {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 6px;
+}
+
+.btn-del .del-line, .btn-add .add-line {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #323232;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+ul, li p {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.bg {
+  width: 600px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+.bg .bg-color {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.9;
+}
+.bg .bg-color:nth-child(1) {
+  background-color: #894329;
+  top: 230px;
+  left: 0;
+}
+.bg .bg-color:nth-child(2) {
+  background-color: #12727D;
+  top: 20px;
+}
+.bg .bg-color:nth-child(3) {
+  background-color: #FCB885;
+  top: 230px;
+  right: 0;
+}
+
+.wapper {
+  position: absolute;
+  top: 30px;
+  width: 650px;
+  min-height: 650px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  font-size: 1.25em;
+}
+.wapper h1 {
+  text-align: center;
+}
+
+.todo__input-block {
+  display: flex;
+  justify-content: space-between;
+}
+.todo__input-block .todo__input {
+  width: 94%;
+  padding: 18px;
+  border: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.btn-add:after {
+  content: "";
+  position: absolute;
+  top: 29.9%;
+  left: -1px;
+  border-radius: 24%;
+  width: 33px;
+  height: 33px;
+  background-color: transparent;
+}
+.btn-add:hover:after {
+  background-color: rgba(230, 230, 230, 0.8);
+}
+.btn-add .add-line {
+  background-color: #12727D;
+  z-index: 2;
+}
+.btn-add .add-line:first-child {
+  transform: rotate(90deg);
+}
+
+.todo__list {
+  width: 100%;
+  line-height: 1.5;
+}
+.todo__list .todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.todo__list .todo .todo__check {
+  display: none;
+}
+.todo__list .todo .todo__check + span {
+  display: inline-block;
+  padding-left: 35px;
+  cursor: pointer;
+  background: url("./check-01.svg") no-repeat;
+  background-position-y: center;
+}
+.todo__list .todo .todo__check:checked + span {
+  background: url("./checked-01.svg") no-repeat;
+  background-position-y: center;
+}
+
+.btn-del {
+  padding: 12px 6px;
+  transition: 0.3s;
+  color: #323232;
+}
+.btn-del:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
+}
+.btn-del .del-line {
+  pointer-events: none;
+}
+.btn-del .del-line:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+}
+.btn-del .del-line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .bg {
+    width: 100%;
+    height: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .bg .bg-color {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+  }
+
+  .wapper {
+    top: 0px;
+    width: 100%;
+    min-height: 100%;
+    border: none;
+    border-radius: 0px;
+  }
+
+  .btn-add:after {
+    top: 25%;
+  }
+
+  .todo__input-block .todo__input {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .todo__list .todo .todo__title {
+    width: 90%;
+  }
+  .todo__list .todo .todo__check + span {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
